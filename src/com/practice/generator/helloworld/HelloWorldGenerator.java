@@ -30,4 +30,9 @@ public class HelloWorldGenerator {
             e.printStackTrace();
         }
     }
+
+    public static void main(String[] args) {
+        HelloWorldGenerator helloWorldGenerator = new HelloWorldGenerator();
+        helloWorldGenerator.generateJavaSource();
+    }
 }
