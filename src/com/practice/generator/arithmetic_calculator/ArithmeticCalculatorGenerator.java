@@ -34,8 +34,11 @@ public class ArithmeticCalculatorGenerator {
         return MethodSpec.methodBuilder(methodName)
                 .returns(int.class)
                 .addStatement("int result = " + defaultValue)
-                .beginControlFlow("for (int i = " + from + "; i < " + to + "; i++)")
-                .addStatement("result = result " + operation + " i")
+//                .beginControlFlow("for (int i = " + from + "; i < " + to + "; i++)")
+//                .addStatement("result = result " + operation + " i")
+//                .endControlFlow()
+                .beginControlFlow("for (int i = $L; i < $L; i++)", from, to)
+                .addStatement("result = result $L i", operation)
                 .endControlFlow()
                 .addStatement("return result")
                 .build();
